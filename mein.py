@@ -1,6 +1,3 @@
-a = input('Введите пароль: ')
-
-
 def is_very_long(a):
     return len(a) > 12
         
@@ -21,8 +18,14 @@ def has_symbols(a):
     return not all(b.isalpha() or b.isdigit() for b in a)
 
 
-def password_rating(a):
-    check = (is_very_long(a), has_digit(a), has_symbols(a), has_upper_letters(a), has_lower_letters(a))    
+def main():
+    a = input('Введите пароль: ')
+    check = (is_very_long(a), 
+             has_digit(a), 
+             has_symbols(a), 
+             has_upper_letters(a), 
+             has_lower_letters(a)
+    )    
     score = 0
     b = len
     for scoring_points in check:
@@ -30,9 +33,8 @@ def password_rating(a):
         comparison_variable = b(a)
         if comparison_variable < 5:
             score += 2   
-    return score 
+    print('Рейтинг пароля:',score)
 
-
-SCORE = password_rating(a) 
-print('Рейтинг пароля:',SCORE)
+if __name__ == '__main__':
+    main()
  
