@@ -20,11 +20,12 @@ def has_symbols(a):
 
 def main():
     a = input('Введите пароль: ')
-    check = (is_very_long(a), 
-             has_digit(a), 
-             has_symbols(a), 
-             has_upper_letters(a), 
-             has_lower_letters(a)
+    check = (
+        is_very_long(a), 
+        has_digit(a), 
+        has_symbols(a), 
+        has_upper_letters(a), 
+        has_lower_letters(a),
     )    
     score = 0
     b = len
@@ -34,7 +35,7 @@ def main():
         if comparison_variable < 5:
             score += 2   
     print('Рейтинг пароля:',score)
-    
+
 
 if __name__ == '__main__':
     main()
